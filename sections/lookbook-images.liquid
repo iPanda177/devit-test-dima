@@ -1,5 +1,9 @@
 <h1>{{ section.settings.lookbook }}</h1>
 
+{% for block in section.blocks %}
+  <img src="{{ block.settings.image | img_url:'master' }}">
+{% endfor %}
+
 {% schema %}
   {
     "name": "lookbook-images",

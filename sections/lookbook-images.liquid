@@ -5,7 +5,7 @@
 <div class="lookbook__box">
 {% for block in section.blocks %}
   <a class="lookbook__button" href="#popup1">
-    <img src="{{ block.settings.image | img_url: 'master' }}">
+    <img src="{{ block.settings.image | img_url: 'master' }}" class="lookbook__img">
   </a>  
 {% endfor %}
 </div>

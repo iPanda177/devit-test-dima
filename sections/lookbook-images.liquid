@@ -3,23 +3,24 @@
 <h1 class="lookbook__title">{{ section.settings.lookbook }}</h1>
 
 {% for block in section.blocks %}
-  <div class="lookbook__box">
-	<a class="lookbook__button" href="#popup1">
-      <img src="{{ block.settings.image | img_url: 'master' }}">
-    </a>  
-  </div>
 
-  <div id="popup1" class="lookbook__overlay">
-	<div class="lookbook__popup">
-		<h2>Here i am</h2>
-		<a class="close" href="#">&times;</a>
-		<div class="content">
-			Thank to pop me out of that button, but now i'm done so you can close this window.
-		</div>
-	</div>
+<div class="lookbook__box">
+  <a class="lookbook__button" href="#popup1">
+    <img src="{{ block.settings.image | img_url: 'master' }}">
+  </a>  
 </div>
-  
+
 {% endfor %}
+
+<div id="popup1" class="lookbook__overlay">
+  <div class="lookbook__popup">
+      <h2>Here i am</h2>
+      <a class="close" href="#">&times;</a>
+      <div class="content">
+          Thank to pop me out of that button, but now i'm done so you can close this window.
+      </div>
+  </div>
+</div>
 
 {% schema %}
   {

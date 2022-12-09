@@ -47,7 +47,7 @@
   color: #333;
   font-family: Tahoma, Arial, sans-serif;
 }
-.lookbook__popup .close {
+.lookbook__popup {
   position: absolute;
   top: 20px;
   right: 30px;
@@ -57,6 +57,13 @@
   text-decoration: none;
   color: #333;
 }
+
+.close {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
 .lookbook__popup .close:hover {
   color: #06D85F;
 }

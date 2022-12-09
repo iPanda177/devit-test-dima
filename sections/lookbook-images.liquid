@@ -5,42 +5,17 @@
 <div class="lookbook__box">
 {% for block in section.blocks %}
   <a class="lookbook__button" href="#popup1">
-    <img src="{{ block.settings.image | img_url: 'master' }}" class="lookbook__img">
+    <img src="{{ block.settings.image | img_url: 'master' }}">
   </a>  
 {% endfor %}
 </div>
 
 <div id="popup1" class="lookbook__overlay">
   <div class="lookbook__popup">
-      <div class="lookbook__popup-img">
-          <img src="https://prnt.sc/Z75oQbdU1q46">
-      </div>
-
-      <div class="lookbook__outlook">
-        <div class="lookbook__outlook-item">
-          <div class="item-wrap">
-            <img src="https://prnt.sc/Z75oQbdU1q46">
-
-            <div class="item-info">
-              <div>
-                <h4>BORA</h4>
-
-                <h4>925 EUR</h4>
-              </div>
-              
-              <div>
-                <p>Slim waisted tailored jacket</p>
-                <p>Black</p>
-              </div>
-              
-              <div>
-                <select></select>
-
-                <button>Add to bag</button>
-              </div>
-            </div>
-          </div>
-        </div>
+      <h2>Here i am</h2>
+      <a class="close" href="#">&times;</a>
+      <div class="content">
+          Thank to pop me out of that button, but now i'm done so you can close this window.
       </div>
   </div>
 </div>

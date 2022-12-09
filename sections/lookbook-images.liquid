@@ -1,4 +1,6 @@
-<h1>{{ section.settings.lookbook }}</h1>
+<link rel="stylesheet" href="{{ 'lookbook-styles.css' | asset_url }}">
+
+<h1 class="lookbook__title">{{ section.settings.lookbook }}</h1>
 
 {% for block in section.blocks %}
   <img src="{{ block.settings.image | img_url:'master' }}">

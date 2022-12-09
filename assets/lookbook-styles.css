@@ -26,13 +26,14 @@
   opacity: 0;
   z-index: 1000;
 }
+
 .lookbook__overlay:target {
   visibility: visible;
   opacity: 1;
 }
 
 .lookbook__popup {
-  margin: 70px auto;
+  margin: 50% auto;
   padding: 20px;
   background: #fff;
   border-radius: 5px;

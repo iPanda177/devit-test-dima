@@ -2,15 +2,13 @@
 
 <h1 class="lookbook__title">{{ section.settings.lookbook }}</h1>
 
-{% for block in section.blocks %}
-
 <div class="lookbook__box">
+{% for block in section.blocks %}
   <a class="lookbook__button" href="#popup1">
     <img src="{{ block.settings.image | img_url: 'master' }}">
   </a>  
-</div>
-
 {% endfor %}
+</div>
 
 <div id="popup1" class="lookbook__overlay">
   <div class="lookbook__popup">

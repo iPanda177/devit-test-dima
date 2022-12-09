@@ -33,6 +33,7 @@
 }
 
 .lookbook__popup {
+  display: flex;
   margin: 200px auto;
   padding: 20px;
   background: #fff;

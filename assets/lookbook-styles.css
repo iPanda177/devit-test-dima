@@ -35,6 +35,7 @@
 .lookbook__popup {
   display: flex;
   flex-direction: row;
+  gap: 15px;
   margin: 200px auto;
   padding: 20px;
   background: #fff;

@@ -69,7 +69,16 @@
   overflow: auto;
 }
 
-.item-wrap {
+.lookbook__item-wrap {
+  display: flex;
+  flex-direction: row;
+}
+
+.lookbook__item-info {
+  display: flex;
+}
+
+.lookbook__item-title {
   display: flex;
   flex-direction: row;
 }

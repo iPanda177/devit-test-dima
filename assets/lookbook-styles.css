@@ -5,6 +5,7 @@
 .lookbook__box {
   display: flex;
   margin: 0 auto;
+  flex-direction: row;
 }
 
 .lookbook__overlay {

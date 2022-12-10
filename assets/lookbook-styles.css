@@ -124,13 +124,12 @@
 .lookbook__item-buttons::after {
   content: " ";
   display: block;
-  position: absolute;
+  position: relative;
   height: 5px;
   background: black;
-  width: 40px;
+  width: 350px;
   left: 100%;
-  top: calc(50% - 2px);
-  z-index: 1000;
+  bottom: 0;
 }
 
 .lookbook__item-btn {

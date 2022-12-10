@@ -239,4 +239,8 @@
   .lookbook__popup-image {
     display: none;
   }
+
+  .lookbook__item-img {
+    display: none;
+  }
 }

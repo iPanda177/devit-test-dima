@@ -96,6 +96,7 @@
 .lookbook__item-info {
   display: flex;
   flex-direction: column;
+  width: 300px;
 }
 
 .lookbook__item-header {

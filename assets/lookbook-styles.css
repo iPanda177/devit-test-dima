@@ -115,7 +115,7 @@
 .lookbook__item-buttons {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 60px;
 }
 
 @media screen and (max-width: 700px) {

@@ -224,10 +224,10 @@
 }
 
 @media screen and (max-width: 700px) {
-  .box{
+  .lookbook__box{
     width: 70%;
   }
-  .popup{
+  .lookbook__popup{
     width: 70%;
   }
 

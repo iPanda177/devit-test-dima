@@ -38,6 +38,7 @@
                     </div>
                     
                     <div class="lookbook__item-buttons">
+                      {%- assign product_form_id = 'quick-add-' | append: section.id | append: product.id -%}
                       {% if product.has_only_default_variant == false %}
                         <variant-selects
                           id="variant-selects-{{ section.id }}"
@@ -76,13 +77,7 @@
                             {{ product.variants | json }}
                           </script>
                         </variant-selects>
-                        {%- comment -%} <select class="lookbook__item-select">
-                          {% for variant in product.variants %}
-                            <option value="{{ variant.title | handleize }}">{{ variant.title }}</option>                    
-                          {% endfor %}
-                        </select>                     {%- endcomment -%}
                       {% endif %}
-                      {%- assign product_form_id = 'quick-add-' | append: section.id | append: product.id -%}
                       <product-form>
                         {%- form 'product',
                           product,

@@ -47,12 +47,6 @@
                     >
                       {%- for option in product_1.options_with_values -%}
                         <div class="product-form__input product-form__input--dropdown">
-                          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-                            {{ option.name }}
-                          </label>
-                              <span style="display: none;">{{ product_1 | json }}</span>
-                              <span style="display: none;">{{ option | json }}</span>
-                              <span style="display: none;">{{ block | json }}</span>
                           <div class="select">
                             <select
                               id="Option-{{ section.id }}-{{ forloop.index0 }}"

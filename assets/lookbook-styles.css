@@ -93,5 +93,6 @@
 
   .lookbook__box {
     flex-direction: column;
+    align-items: center;
   }
 }

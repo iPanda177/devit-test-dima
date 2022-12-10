@@ -4,145 +4,145 @@
 
 <div class="lookbook__box">
 {% for block in section.blocks %}
-  <a class="lookbook__button" href="#lookbook-popup-{{ block.id }}">
-    <img src="{{ block.settings.image | img_url: 'master' }}" class="lookbook__img">
-  </a>
-  <div id="lookbook-popup-{{ block.id }}" class="lookbook__overlay">
-    <div class="lookbook__popup">
-        {% if block.settings.image != blank %}
-          <div class="lookbook__popup-img">
-              <img src="{{ block.settings.image | img_url: '400x' }}" alt="{{ block.settings.image.alt }}" class="lookbook__popup-image">
-          </div>            
-        {% endif %}
-        <div class="lookbook__outlook">
-          {% if block.settings.product_1 != blank %}
-            {% assign product_1 = all_products[block.settings.product_1] %}
-            <div class="lookbook__outlook-item">
-              {% if product_1.featured_image != blank %}
-                <img src="{{ product_1.featured_image | img_url: '150x' }}"
-                  alt="{{ product_1.featured_image.alt | default: product_1.title }}" 
-                  class="lookbook__item-img"
-                >                
-              {% endif %}  
-              <div class="lookbook__item-info">
-                <div class="lookbook__item-header">
-                  <h4 class="lookbook__item-title">{{ product_1.title }}</h4>  
-                  <h4 class="lookbook__item-title">{{ product_1.price_max | money_without_trailing_zeros }}</h4>
-                </div>
-                
-                <div>
-                  <p class="lookbook__item-text">{{ product_1.vendor }}</p>
-                  <p class="lookbook__item-text">{{ product_1.type }}</p>
-                </div>
-                
-                <div class="lookbook__item-buttons">
-                  {% if product_1.has_only_default_variant == false %}
-                    <variant-selects
-                      id="variant-selects-{{ section.id }}"
-                      class="no-js-hidden"
-                      data-section="{{ section.id }}"
-                      data-url="{{ product_1.url }}"
-                      {% if update_url == false %}data-update-url="false"{% endif %}
-                      {{ block.shopify_attributes }}
-                    >
-                      {%- for option in product_1.options_with_values -%}
-                        <div class="product-form__input product-form__input--dropdown">
-                          <div class="select">
-                            <select
-                              id="Option-{{ section.id }}-{{ forloop.index0 }}"
-                              class="select__select"
-                              name="options[{{ option.name | escape }}]"
-                              form="{{ product_form_id }}"
-                            >
-                              {% for value in option.values %}
-                                <option
-                                  value="{{ value | escape }}"
-                                  {% if option.selected_value == value %}
-                                    selected="selected"
-                                  {% endif %}
-                                >
-                                  {{- value -}}
-                                </option>                                
-                              {% endfor %}
-                            </select>
-                            {% render 'icon-caret' %}
+  {% if block.settings.image != blank %}
+    <a class="lookbook__button" href="#lookbook-popup-{{ block.id }}">
+      <img src="{{ block.settings.image | img_url: 'master' }}" class="lookbook__img">
+    </a>
+    <div id="lookbook-popup-{{ block.id }}" class="lookbook__overlay">
+      <div class="lookbook__popup">
+            <div class="lookbook__popup-img">
+                <img src="{{ block.settings.image | img_url: '400x' }}" alt="{{ block.settings.image.alt }}" class="lookbook__popup-image">
+            </div>     
+          <div class="lookbook__outlook">
+            {% if block.settings.product_1 != blank %}
+              {% assign product_1 = all_products[block.settings.product_1] %}
+              <div class="lookbook__outlook-item">
+                {% if product_1.featured_image != blank %}
+                  <img src="{{ product_1.featured_image | img_url: '150x' }}"
+                    alt="{{ product_1.featured_image.alt | default: product_1.title }}" 
+                    class="lookbook__item-img"
+                  >                
+                {% endif %}  
+                <div class="lookbook__item-info">
+                  <div class="lookbook__item-header">
+                    <h4 class="lookbook__item-title">{{ product_1.title }}</h4>  
+                    <h4 class="lookbook__item-title">{{ product_1.price_max | money_without_trailing_zeros }}</h4>
+                  </div>
+                  
+                  <div>
+                    <p class="lookbook__item-text">{{ product_1.vendor }}</p>
+                    <p class="lookbook__item-text">{{ product_1.type }}</p>
+                  </div>
+                  
+                  <div class="lookbook__item-buttons">
+                    {% if product_1.has_only_default_variant == false %}
+                      <variant-selects
+                        id="variant-selects-{{ section.id }}"
+                        class="no-js-hidden"
+                        data-section="{{ section.id }}"
+                        data-url="{{ product_1.url }}"
+                        {% if update_url == false %}data-update-url="false"{% endif %}
+                        {{ block.shopify_attributes }}
+                      >
+                        {%- for option in product_1.options_with_values -%}
+                          <div class="product-form__input product-form__input--dropdown">
+                            <div class="select">
+                              <select
+                                id="Option-{{ section.id }}-{{ forloop.index0 }}"
+                                class="select__select"
+                                name="options[{{ option.name | escape }}]"
+                                form="{{ product_form_id }}"
+                              >
+                                {% for value in option.values %}
+                                  <option
+                                    value="{{ value | escape }}"
+                                    {% if option.selected_value == value %}
+                                      selected="selected"
+                                    {% endif %}
+                                  >
+                                    {{- value -}}
+                                  </option>                                
+                                {% endfor %}
+                              </select>
+                              {% render 'icon-caret' %}
+                            </div>
                           </div>
-                        </div>
-                      {%- endfor -%}
-                
-                      <script type="application/json">
-                        {{ product_1.variants | json }}
-                      </script>
-                    </variant-selects>
-                    {%- comment -%} <select class="lookbook__item-select">
-                      {% for variant in product_1.variants %}
-                        <option value="{{ variant.title | handleize }}">{{ variant.title }}</option>                    
-                      {% endfor %}
-                    </select>                     {%- endcomment -%}
-                  {% endif %}
-                  {%- assign product_form_id = 'quick-add-' | append: section.id | append: product_1.id -%}
-                  <product-form>
-                    {%- form 'product',
-                      product_1,
-                      id: product_form_id,
-                      class: 'form',
-                      novalidate: 'novalidate',
-                      data-type: 'add-to-cart-form'
-                    -%}
-                      <input
-                        type="hidden"
-                        name="id"
-                        value="{{ product_1.selected_or_first_available_variant.id }}"
-                        disabled
-                      >
-                      <button
-                        id="{{ product_form_id }}-submit"
-                        type="submit"
-                        name="add"
-                        class="quick-add__submit button button--full-width button--secondary{% if horizontal_quick_add %} card--horizontal__quick-add{% endif %}"
-                        aria-haspopup="dialog"
-                        aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ product_1.id }}"
-                        aria-live="polite"
-                        data-sold-out-message="true"
-                        {% if product_1.selected_or_first_available_variant.available == false %}
+                        {%- endfor -%}
+                  
+                        <script type="application/json">
+                          {{ product_1.variants | json }}
+                        </script>
+                      </variant-selects>
+                      {%- comment -%} <select class="lookbook__item-select">
+                        {% for variant in product_1.variants %}
+                          <option value="{{ variant.title | handleize }}">{{ variant.title }}</option>                    
+                        {% endfor %}
+                      </select>                     {%- endcomment -%}
+                    {% endif %}
+                    {%- assign product_form_id = 'quick-add-' | append: section.id | append: product_1.id -%}
+                    <product-form>
+                      {%- form 'product',
+                        product_1,
+                        id: product_form_id,
+                        class: 'form',
+                        novalidate: 'novalidate',
+                        data-type: 'add-to-cart-form'
+                      -%}
+                        <input
+                          type="hidden"
+                          name="id"
+                          value="{{ product_1.selected_or_first_available_variant.id }}"
                           disabled
-                        {% endif %}
-                      >
-                        <span>
-                          {%- if product_1.selected_or_first_available_variant.available -%}
-                            {{ 'products.product.add_to_cart' | t }}
-                          {%- else -%}
+                        >
+                        <button
+                          id="{{ product_form_id }}-submit"
+                          type="submit"
+                          name="add"
+                          class="quick-add__submit button button--full-width button--secondary{% if horizontal_quick_add %} card--horizontal__quick-add{% endif %}"
+                          aria-haspopup="dialog"
+                          aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ product_1.id }}"
+                          aria-live="polite"
+                          data-sold-out-message="true"
+                          {% if product_1.selected_or_first_available_variant.available == false %}
+                            disabled
+                          {% endif %}
+                        >
+                          <span>
+                            {%- if product_1.selected_or_first_available_variant.available -%}
+                              {{ 'products.product.add_to_cart' | t }}
+                            {%- else -%}
+                              {{ 'products.product.sold_out' | t }}
+                            {%- endif -%}
+                          </span>
+                          <span class="sold-out-message hidden">
                             {{ 'products.product.sold_out' | t }}
+                          </span>
+                          {%- if horizontal_quick_add -%}
+                            <span class="icon-wrap">{% render 'icon-plus' %}</span>
                           {%- endif -%}
-                        </span>
-                        <span class="sold-out-message hidden">
-                          {{ 'products.product.sold_out' | t }}
-                        </span>
-                        {%- if horizontal_quick_add -%}
-                          <span class="icon-wrap">{% render 'icon-plus' %}</span>
-                        {%- endif -%}
-                        <div class="loading-overlay__spinner hidden">
-                          <svg
-                            aria-hidden="true"
-                            focusable="false"
-                            class="spinner"
-                            viewBox="0 0 66 66"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-                          </svg>
-                        </div>
-                      </button>
-                    {%- endform -%}
-                  </product-form>
+                          <div class="loading-overlay__spinner hidden">
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              class="spinner"
+                              viewBox="0 0 66 66"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                            </svg>
+                          </div>
+                        </button>
+                      {%- endform -%}
+                    </product-form>
+                  </div>
                 </div>
-              </div>
-            </div>            
-          {% endif %}
-        </div>
-        <a class="close" href="https://devit-test-dima.myshopify.com/pages/lookbook">&times;</a>
-    </div>
-  </div> 
+              </div>            
+            {% endif %}
+          </div>
+          <a class="close" href="https://devit-test-dima.myshopify.com/pages/lookbook">&times;</a>
+      </div>
+    </div>        
+  {% endif %}
 {% endfor %}
 </div>
 

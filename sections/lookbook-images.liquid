@@ -9,9 +9,9 @@
   </a>
   <div id="lookbook-popup-{{ block.id }}" class="lookbook__overlay">
     <div class="lookbook__popup">
-        {% if block.settings.your_image != blank %}
+        {% if block.settings.image != blank %}
           <div class="lookbook__popup-img">
-              <img src="{{ block.settings.your_image | img_url: '400x' }}" alt="{{ block.settings.your_image.alt }}" class="lookbook__popup-image">
+              <img src="{{ block.settings.image | img_url: '400x' }}" alt="{{ block.settings.image.alt }}" class="lookbook__popup-image">
           </div>            
         {% endif %}
         <div class="lookbook__outlook">
@@ -123,8 +123,8 @@
         "settings": [
           {
             "type": "image_picker",
-            "label": "your_image",
-            "id": "image"
+            "id": "image",
+            "label": "your_image"
           },
           {
             "type": "product",

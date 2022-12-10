@@ -27,7 +27,7 @@
               <div class="lookbook__item-info">
                 <div class="lookbook__item-header">
                   <h4 class="lookbook__item-title">{{ product_1.title }}</h4>  
-                  <h4 class="lookbook__item-title">{{ product_1.price_max }}</h4>
+                  <h4 class="lookbook__item-title">{{ product_1.price_max | money_without_currency | strip_html }}</h4>
                 </div>
                 
                 <div>

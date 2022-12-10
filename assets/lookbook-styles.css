@@ -70,6 +70,10 @@
   overflow: auto;
 }
 
+.lookbook__outlook {
+  display: flex; 
+}
+
 .lookbook__outlook-item {
   display: flex;
   flex-direction: row;

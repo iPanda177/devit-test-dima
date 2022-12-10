@@ -52,7 +52,7 @@
   color: #333;
   font-family: Tahoma, Arial, sans-serif;
 }
-.lookbook__popup .close {
+.lookbook__popup {
   position: absolute;
   top: 20px;
   right: 30px;

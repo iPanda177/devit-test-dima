@@ -96,7 +96,7 @@
   position: absolute;
   height: 1px;
   background-color: #808080;
-  width: 550px;
+  width: 100%;
   left: 0;
   bottom: -10px;
 }

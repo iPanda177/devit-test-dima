@@ -9,11 +9,11 @@
   </a>
   <div id="lookbook-popup-{{ block.id }}" class="lookbook__overlay">
     <div class="lookbook__popup">
-        <div class="lookbook__popup-img">
-          {% if block.settings.your_image %}
-            <img src="{{ block.settings.your_image | img_url: '400x' }}" alt="{{ block.settings.your_image.alt }}" class="lookbook__popup-image">            
-          {% endif %}
-        </div>
+        {% if block.settings.your_image != blank %}
+          <div class="lookbook__popup-img">
+              <img src="{{ block.settings.your_image | img_url: '400x' }}" alt="{{ block.settings.your_image.alt }}" class="lookbook__popup-image">
+          </div>            
+        {% endif %}
         <div class="lookbook__outlook">
           {% if block.settings.product_1 != blank %}
             {% assign product_1 = block.settings.product_1 %}

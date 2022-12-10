@@ -216,10 +216,10 @@
           "4b5cd583-bfaf-4db4-9e9e-0050e8f5d1ac": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/model1_f6edfdc4-e2d7-44f6-a295-776b7dcd93ab.jpg",
-              "product_1": "product-1",
-              "product_2": "",
-              "product_3": ""
+              "image": "shopify:\/\/shop_images\/look-1.jpg",
+              "product_1": "jacket",
+              "product_2": "jeans",
+              "product_3": "saint-laurent"
             }
           },
           "fea669c7-29c2-4159-a670-f155bfdfcbaf": {

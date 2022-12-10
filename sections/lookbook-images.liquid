@@ -4,15 +4,14 @@
 
 <div class="lookbook__box">
 {% for block in section.blocks %}
-  <a class="lookbook__button" href="#{{ block.id }}">
+  <a class="lookbook__button" href="#lookbook-popup-{{ block.id }}">
     <img src="{{ block.settings.image | img_url: 'master' }}" class="lookbook__img">
   </a>
-  <div id="{{ block.id }}" class="lookbook__overlay">
+  <div id="lookbook-popup-{{ block.id }}" class="lookbook__overlay">
     <div class="lookbook__popup">
         <div class="lookbook__popup-img">
             <img src="https://i.ibb.co/tKxzWLP/model2.jpg" alt="model2" border="0" class="lookbook__popup-image">
         </div>
-
         <div class="lookbook__outlook">
           <div class="lookbook__outlook-item">
             <img src="https://i.ibb.co/Qr98ttf/Bora.jpg" alt="Bora" border="0" class="lookbook__item-img">

@@ -121,6 +121,17 @@
   overflow: hidden;
 }
 
+.lookbook__item-buttons::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 5px;
+  background: black;
+  width: 40px;
+  left: 100%;
+  top: calc(50% - 2px);
+}
+
 .lookbook__item-btn {
   width: 220px;
   height: 40px;

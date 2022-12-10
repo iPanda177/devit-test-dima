@@ -98,7 +98,7 @@
   background-color: #808080;
   width: 550px;
   left: 0;
-  bottom: 0;
+  bottom: -10px;
 }
 
 .lookbook__item-img {

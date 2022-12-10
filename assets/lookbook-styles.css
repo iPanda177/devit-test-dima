@@ -119,7 +119,7 @@
   margin-top: 45px;
 }
 
-.lookbook__item-buttons:after {
+.lookbook__item-buttons::after {
   content: "";
   position: relative;
   bottom: 0;

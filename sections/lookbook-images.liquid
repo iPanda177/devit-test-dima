@@ -37,11 +37,42 @@
                 
                 <div class="lookbook__item-buttons">
                   {% if product_1.has_only_default_variant == false %}
-                    <select class="lookbook__item-select">
+                    <variant-selects
+                      id="variant-selects-{{ section.id }}"
+                      class="no-js-hidden"
+                      data-section="{{ section.id }}"
+                      data-url="{{ product_1.url }}"
+                      {% if update_url == false %}data-update-url="false"{% endif %}
+                      {{ block.shopify_attributes }}
+                    >
+                      {%- for option in product_1.options_with_values -%}
+                        <div class="product-form__input product-form__input--dropdown">
+                          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+                            {{ option.name }}
+                          </label>
+                          <div class="select">
+                            <select
+                              id="Option-{{ section.id }}-{{ forloop.index0 }}"
+                              class="select__select"
+                              name="options[{{ option.name | escape }}]"
+                              form="{{ product_form_id }}"
+                            >
+                              {% render 'product-variant-options', product: product_1, option: option, block: block %}
+                            </select>
+                            {% render 'icon-caret' %}
+                          </div>
+                        </div>
+                      {%- endfor -%}
+                
+                      <script type="application/json">
+                        {{ product_1.variants | json }}
+                      </script>
+                    </variant-selects>
+                    {%- comment -%} <select class="lookbook__item-select">
                       {% for variant in product_1.variants %}
                         <option value="{{ variant.title | handleize }}">{{ variant.title }}</option>                    
                       {% endfor %}
-                    </select>                    
+                    </select>                     {%- endcomment -%}
                   {% endif %}
                   {%- assign product_form_id = 'quick-add-' | append: section.id | append: product_1.id -%}
                   <product-form>

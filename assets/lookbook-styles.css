@@ -88,6 +88,11 @@
   gap: 20px;
 }
 
+.lookbook__item-img {
+  width: 150px;
+  height: 200px;
+}
+
 .lookbook__item-info {
   display: flex;
   flex-direction: column;

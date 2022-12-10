@@ -117,15 +117,17 @@
   display: flex;
   justify-content: space-between;
   margin-top: 45px;
+  overflow: hidden;
 }
 
 .lookbook__item-buttons::after {
   content: "";
-  position: relative;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  display: inline-block;
   height: 0.5em;
+  vertical-align: bottom;
+  width: 100%;
+  margin-right: -100%;
+  margin-left: 10px;
   border-top: 1px solid black;
 }
 

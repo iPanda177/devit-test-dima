@@ -92,6 +92,6 @@
   }
 
   .lookbook__box {
-    flex-direction: row;
+    flex-direction: column;
   }
 }

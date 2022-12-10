@@ -98,11 +98,13 @@
   flex-direction: column;
 }
 
-.lookbook__item-title {
+.lookbook__item-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
 
+.lookbook__item-title {
   font-weight: 700;
 }
 

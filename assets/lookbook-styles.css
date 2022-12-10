@@ -70,6 +70,10 @@
   overflow: auto;
 }
 
+.lookbook__popup-img {
+  height: 100%;
+}
+
 .lookbook__outlook {
   display: flex; 
   flex-direction: column;

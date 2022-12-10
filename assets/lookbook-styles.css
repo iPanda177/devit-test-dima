@@ -71,6 +71,11 @@
   overflow: auto;
 }
 
+.lookbook__popup-image {
+  width: 500px;
+  height: 700px;
+}
+
 .lookbook__outlook {
   display: flex; 
   flex-direction: column;

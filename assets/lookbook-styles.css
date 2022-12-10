@@ -101,6 +101,10 @@
   bottom: -10px;
 }
 
+.lookbook__outlook-item .last::after {
+  display: none;
+}
+
 .lookbook__item-img {
   width: 150px;
   height: 200px;

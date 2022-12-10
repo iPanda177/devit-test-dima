@@ -121,17 +121,6 @@
   overflow: hidden;
 }
 
-.lookbook__item-buttons::after {
-  content: "";
-  display: inline-block;
-  height: 0.5em;
-  vertical-align: bottom;
-  width: 100%;
-  margin-right: -100%;
-  margin-left: 10px;
-  border-top: 1px solid black;
-}
-
 .lookbook__item-btn {
   width: 220px;
   height: 40px;

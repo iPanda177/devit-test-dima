@@ -17,7 +17,6 @@
             {% for i in (1..3) %}
               {% assign product_index = 'product_' | append: i %}
               {% assign product_block = block.settings[product_index] %}
-              <span>{{ product_index }} === {{i}} == {{ product_block }}</span>
               {% if product_block != blank %}
                 {% assign product = all_products[product_block] %}
                 <div class="lookbook__outlook-item">

@@ -47,6 +47,7 @@
                       {% endfor %}
                     </select>                    
                   {% endif %}
+                  {%- assign product_form_id = 'quick-add-' | append: section.id | append: product_1.id -%}
                   <product-form>
                     {%- form 'product',
                       product_1,

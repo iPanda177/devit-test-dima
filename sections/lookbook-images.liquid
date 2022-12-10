@@ -4,102 +4,101 @@
 
 <div class="lookbook__box">
 {% for block in section.blocks %}
-  <a class="lookbook__button" href="#popup1">
+  <a class="lookbook__button" href="#{{ block.id }}">
     <img src="{{ block.settings.image | img_url: 'master' }}" class="lookbook__img">
-  </a>  
+  </a>
+  <div id="{{ block.id }}" class="lookbook__overlay">
+    <div class="lookbook__popup">
+        <div class="lookbook__popup-img">
+            <img src="https://i.ibb.co/tKxzWLP/model2.jpg" alt="model2" border="0" class="lookbook__popup-image">
+        </div>
+
+        <div class="lookbook__outlook">
+          <div class="lookbook__outlook-item">
+            <img src="https://i.ibb.co/Qr98ttf/Bora.jpg" alt="Bora" border="0" class="lookbook__item-img">
+
+            <div class="lookbook__item-info">
+              <div class="lookbook__item-header">
+                <h4 class="lookbook__item-title">BORA</h4>
+
+                <h4 class="lookbook__item-title">925 EUR</h4>
+              </div>
+              
+              <div>
+                <p class="lookbook__item-text">Slim waisted tailored jacket</p>
+                <p class="lookbook__item-text">Black</p>
+              </div>
+              
+              <div class="lookbook__item-buttons">
+                <select class="lookbook__item-select">
+                  <option>XS</option>
+                  <option>S</option>
+                  <option>M</option>
+                  <option>L</option>
+                  <option>XL</option>
+                </select>
+
+                <button class="lookbook__item-btn"><span>Add to bag</span></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="lookbook__outlook-item">
+            <img src="https://i.ibb.co/4JnDdhn/Fida.jpg" alt="Fida" border="0" class="lookbook__item-img">
+
+            <div class="lookbook__item-info">
+              <div class="lookbook__item-header">
+                <h4 class="lookbook__item-title">FIDA</h4>
+
+                <h4 class="lookbook__item-title">795 EUR</h4>
+              </div>
+              
+              <div>
+                <p class="lookbook__item-text">Straight regenerated leather wrap kilt skirt</p>
+                <p class="lookbook__item-text">Black</p>
+              </div>
+              
+              <div class="lookbook__item-buttons">
+                <select class="lookbook__item-select">
+                  <option>XS</option>
+                  <option>S</option>
+                  <option>M</option>
+                  <option>L</option>
+                  <option>XL</option>
+                </select>
+
+                <button class="lookbook__item-btn"><span>Add to bag</span></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="lookbook__outlook-item">
+            <img src="https://i.ibb.co/MBsqVkD/Pillow.jpg" alt="Pillow" border="0" class="lookbook__item-img">
+
+            <div class="lookbook__item-info">
+              <div class="lookbook__item-header">
+                <h4 class="lookbook__item-title">THE PILLOW BAG</h4>
+
+                <h4 class="lookbook__item-title">745 EUR</h4>
+              </div>
+              
+              <div>
+                <p class="lookbook__item-text">Pillow Bag</p>
+                <p class="lookbook__item-text">Black</p>
+              </div>
+              
+              <div class="lookbook__item-buttons">
+                <p class="lookbook__item-text">One Size</p>
+
+                <button class="lookbook__item-btn"><span>Add to bag</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="close" href="https://devit-test-dima.myshopify.com/pages/lookbook">&times;</a>
+    </div>
+  </div> 
 {% endfor %}
-</div>
-
-<div id="popup1" class="lookbook__overlay">
-  <div class="lookbook__popup">
-      <div class="lookbook__popup-img">
-          <img src="https://i.ibb.co/tKxzWLP/model2.jpg" alt="model2" border="0" class="lookbook__popup-image">
-      </div>
-
-      <div class="lookbook__outlook">
-        <div class="lookbook__outlook-item">
-          <img src="https://i.ibb.co/Qr98ttf/Bora.jpg" alt="Bora" border="0" class="lookbook__item-img">
-
-          <div class="lookbook__item-info">
-            <div class="lookbook__item-header">
-              <h4 class="lookbook__item-title">BORA</h4>
-
-              <h4 class="lookbook__item-title">925 EUR</h4>
-            </div>
-            
-            <div>
-              <p class="lookbook__item-text">Slim waisted tailored jacket</p>
-              <p class="lookbook__item-text">Black</p>
-            </div>
-            
-            <div class="lookbook__item-buttons">
-              <select class="lookbook__item-select">
-                <option>XS</option>
-                <option>S</option>
-                <option>M</option>
-                <option>L</option>
-                <option>XL</option>
-              </select>
-
-              <button class="lookbook__item-btn"><span>Add to bag</span></button>
-            </div>
-          </div>
-        </div>
-
-        <div class="lookbook__outlook-item">
-          <img src="https://i.ibb.co/4JnDdhn/Fida.jpg" alt="Fida" border="0" class="lookbook__item-img">
-
-          <div class="lookbook__item-info">
-            <div class="lookbook__item-header">
-              <h4 class="lookbook__item-title">FIDA</h4>
-
-              <h4 class="lookbook__item-title">795 EUR</h4>
-            </div>
-            
-            <div>
-              <p class="lookbook__item-text">Straight regenerated leather wrap kilt skirt</p>
-              <p class="lookbook__item-text">Black</p>
-            </div>
-            
-            <div class="lookbook__item-buttons">
-              <select class="lookbook__item-select">
-                <option>XS</option>
-                <option>S</option>
-                <option>M</option>
-                <option>L</option>
-                <option>XL</option>
-              </select>
-
-              <button class="lookbook__item-btn"><span>Add to bag</span></button>
-            </div>
-          </div>
-        </div>
-
-        <div class="lookbook__outlook-item">
-          <img src="https://i.ibb.co/MBsqVkD/Pillow.jpg" alt="Pillow" border="0" class="lookbook__item-img">
-
-          <div class="lookbook__item-info">
-            <div class="lookbook__item-header">
-              <h4 class="lookbook__item-title">THE PILLOW BAG</h4>
-
-              <h4 class="lookbook__item-title">745 EUR</h4>
-            </div>
-            
-            <div>
-              <p class="lookbook__item-text">Pillow Bag</p>
-              <p class="lookbook__item-text">Black</p>
-            </div>
-            
-            <div class="lookbook__item-buttons">
-              <p class="lookbook__item-text">One Size</p>
-
-              <button class="lookbook__item-btn"><span>Add to bag</span></button>
-            </div>
-          </div>
-        </div>
-      </div>
-    <a class="close" href="https://devit-test-dima.myshopify.com/pages/lookbook">&times;</a>
-  </div>
 </div>
 
 {% schema %}
@@ -127,9 +126,3 @@
     ]
   }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}

@@ -73,7 +73,7 @@
 .lookbook__outlook {
   display: flex; 
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
 .lookbook__outlook-item {

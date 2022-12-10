@@ -16,21 +16,23 @@
         {% endif %}
         <div class="lookbook__outlook">
           {% if block.settings.product_1 != blank %}
-            {% assign product_1 = block.settings.product_1 %}
-            <div>{{ product_1 }}</div>
+            {% assign product_1 = all_products[block.settings.product_1] %}
             <div class="lookbook__outlook-item">
-              <img src="https://i.ibb.co/Qr98ttf/Bora.jpg" alt="Bora" border="0" class="lookbook__item-img">
-  
+              {% if product_1.featured_image != blank %}
+                <img src="{{ product_1.featured_image | img_url: '150x' }}"
+                  alt="{{ product_1.featured_image.alt | default: product_1.title }}" 
+                  class="lookbook__item-img"
+                >                
+              {% endif %}  
               <div class="lookbook__item-info">
                 <div class="lookbook__item-header">
-                  <h4 class="lookbook__item-title">BORA</h4>
-  
-                  <h4 class="lookbook__item-title">925 EUR</h4>
+                  <h4 class="lookbook__item-title">{{ product_1.title }}</h4>  
+                  <h4 class="lookbook__item-title">{{ product_1.price_max }}</h4>
                 </div>
                 
                 <div>
-                  <p class="lookbook__item-text">Slim waisted tailored jacket</p>
-                  <p class="lookbook__item-text">Black</p>
+                  <p class="lookbook__item-text">{{ product_1.vendor }}</p>
+                  <p class="lookbook__item-text">{{ product_1.type }}</p>
                 </div>
                 
                 <div class="lookbook__item-buttons">

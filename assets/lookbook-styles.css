@@ -71,10 +71,10 @@
   overflow: auto;
 }
 
-.lookbook__popup-image {
+/* .lookbook__popup-image {
   width: 300px;
   height: 400px;
-}
+} */
 
 .lookbook__outlook {
   display: flex; 

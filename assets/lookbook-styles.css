@@ -101,7 +101,7 @@
   bottom: -10px;
 }
 
-.lookbook__outlook-item::after .last {
+.lookbook__outlook-item:last-of-type::after {
   display: none;
 }
 

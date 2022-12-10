@@ -85,7 +85,7 @@
 
 .lookbook__item-info {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .lookbook__item-title {

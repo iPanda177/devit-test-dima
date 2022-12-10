@@ -118,6 +118,10 @@
   margin-top: 60px;
 }
 
+.lookbook__item-btn {
+  width: 70%;
+}
+
 @media screen and (max-width: 700px) {
   .box{
     width: 70%;

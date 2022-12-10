@@ -39,11 +39,7 @@
                   {% if product_1.has_only_default_variant == false %}
                     <select class="lookbook__item-select">
                       {% for variant in product_1.variants %}
-                        <option value="">XS</option>
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                        <option>XL</option>                        
+                        <option value="{{ variant.title | handleize }}">{{ variant.title }}</option>                    
                       {% endfor %}
                     </select>                    
                   {% endif %}

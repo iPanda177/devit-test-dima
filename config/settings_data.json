@@ -262,7 +262,23 @@
     },
     "content_for_index": [
 
-    ]
+    ],
+    "blocks": {
+      "12402923384101818699": {
+        "type": "shopify:\/\/apps\/cookies-popup\/blocks\/cookies\/e75f59d5-bc84-4d54-904b-d808352ad144",
+        "disabled": false,
+        "settings": {
+          "policy_text": "<p>Our website use cookies. By continuing navigating, we assume your permission to deploy cookies as detailed in our <a href=\"#\" target=\"_blank\" title=\"#\">Privacy Policy<\/a>.<\/p>",
+          "background": "#ffffff",
+          "primary-btn-text": "Accept cookies",
+          "primary-btn-background": "#FFC611",
+          "primary-btn-text-color": "#FFFFFF",
+          "secondary-btn-text": "Decline",
+          "secondary-btn-background": "#FFFFFF",
+          "secondary-btn-text-color": "#000000"
+        }
+      }
+    }
   },
   "presets": {
     "Default": {
